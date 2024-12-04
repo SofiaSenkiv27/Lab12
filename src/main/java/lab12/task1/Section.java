@@ -7,18 +7,18 @@ public abstract class Section {
         this.denomination = denomination;
     }
     public void setNext(Section next) {
-        this.next=next;
+        this.next = next;
     }
     private boolean hasNext() {
         return next != null;
     }
 
     public void process(int amount) {
-        int left = amount%denomination;
+        int left = amount % denomination;
         if (left != 0) {
             if (hasNext()) {
                 next.process(left);
-            } else{
+            } else {
                 throw new IllegalArgumentException("Invalid exception");
             }
         }

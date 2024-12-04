@@ -32,7 +32,7 @@ public class Group<T> extends Task<T> {
         for (Task<T> task : tasks) {
             try {
                 task.apply(arg);
-            } catch (Exception e) {
+            } catch (RuntimeException e) {
                 System.err.println("Error executing task " + task.getId() + ": " + e.getMessage());
             }
         }

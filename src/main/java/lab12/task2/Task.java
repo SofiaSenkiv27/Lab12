@@ -31,8 +31,12 @@ public abstract class Task<T> {
     }
 
     public String getHeader(String header) {
-        return headers != null ? headers.get(header) : null;
-    }
+        if (headers != null) {
+            return headers.get(header);
+        } else {
+            return null;
+        }
+    }    
 
     public boolean hasHeader(String header) {
         return headers != null && headers.containsKey(header);

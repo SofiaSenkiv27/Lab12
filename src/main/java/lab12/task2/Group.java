@@ -30,11 +30,8 @@ public class Group<T> extends Task<T> {
     public void apply(T arg) {
         this.freeze();
         for (Task<T> task : tasks) {
-            try {
-                task.apply(arg);
-            } catch (RuntimeException e) {
-                System.err.println("Error executing task " + task.getId() + ": " + e.getMessage());
-            }
+            task.apply(arg);  
         }
     }
+
 }

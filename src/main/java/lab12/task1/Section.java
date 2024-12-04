@@ -3,12 +3,15 @@ package lab12.task1;
 public abstract class Section {
     private int denomination;
     private Section next;
+
     public Section(int denomination) {
         this.denomination = denomination;
     }
-    public void setNext(Section next) {
-        this.next = next;
+
+    public void setNext(Section nextSection) { 
+        this.next = nextSection;
     }
+
     private boolean hasNext() {
         return next != null;
     }
@@ -23,8 +26,8 @@ public abstract class Section {
             }
         }
         System.out.println("Denomination: "
-        + denomination
-        + " Quantity: "
-        +amount/denomination);
+                + denomination
+                + " Quantity: "
+                + amount / denomination);
     }
 }
